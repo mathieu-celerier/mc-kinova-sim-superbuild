@@ -1,4 +1,4 @@
-include(${CMAKE_CURRENT_LIST_DIR}/superbuild-extensions/interfaces/mc_mujoco)
+include(${CMAKE_CURRENT_LIST_DIR}/../superbuild-extensions/interfaces/mc_mujoco)
 
 if(NOT WITH_ROS_SUPPORT)
   message(FATAL_ERROR "ROS support is required to use the Kinova robot")
