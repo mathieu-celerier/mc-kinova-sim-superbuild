@@ -18,6 +18,8 @@ jobs:
         run: |
           sudo mkdir -p /superbuild /src /build
           sudo chown -R $(whoami) /superbuild /src /build
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@example.com"
           git clone --recursive https://github.com/mc-rtc/mc-rtc-superbuild /superbuild
           cp -r $GITHUB_WORKSPACE /superbuild/extensions/
           ls -lR /superbuild/extensions
