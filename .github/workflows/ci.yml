@@ -1,0 +1,34 @@
+name: CI for mc-kinova-sim-superbuild
+
+on:
+  push:
+    branches:
+      - '**'
+
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: [ubuntu-20.04]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Clone superbuild
+        run: |
+          sudo mkdir -p /superbuild /src /build
+          sudo chown -R $(whoami) /superbuild /src /build
+          git clone --recursive https://github.com/mc-rtc/mc-rtc-superbuild /superbuild
+          cp -r $GITHUB_WORKSPACE /superbuild/extensions/
+          ls -lR /superbuild/extensions
+      - name: Bootstrap
+        run: |
+          cd /superbuild
+          ./utils/bootstrap-linux.sh
+      - name: Setup superbuild
+        run: |
+          cmake -S /superbuild -B /superbuild/build -DSOURCE_DESTINATION=/src -DBUILD_DESTINATION=/build -DVERBOSE_TEST_OUTPUT=ON
+      - name: Build
+        run: |
+          cd /superbuild/build
+          make -j1
