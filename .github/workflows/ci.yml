@@ -29,7 +29,7 @@ jobs:
           ./utils/bootstrap-linux.sh
       - name: Setup superbuild
         run: |
-          cmake -S /superbuild -B /superbuild/build -DSOURCE_DESTINATION=/src -DBUILD_DESTINATION=/build -DVERBOSE_TEST_OUTPUT=ON -DUSE_MC_RTC_API_MIRROR=ON
+          cmake -S /superbuild -B /superbuild/build -DSOURCE_DESTINATION=/src -DBUILD_DESTINATION=/build -DVERBOSE_TEST_OUTPUT=ON -DUSE_MC_RTC_APT_MIRROR=ON
       - name: Build
         run: |
           cd /superbuild/build
