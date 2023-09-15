@@ -39,8 +39,20 @@ AddCatkinProject(ros_kortex
 
 AddProject(mc_kinova
   GITHUB mathieu-celerier/mc_kinova
-  GIT_TAG origin/main
+  GIT_TAG origin/topic/ft_sensor
   DEPENDS mc_rtc ros_kortex
+)
+
+AddProject(mc_residual_estimation
+	GITHUB_PRIVATE mathieu-celerier/mc_residual_estimation
+	GIT_TAG origin/main
+	DEPENDS mc_rtc
+)
+
+AddProject(ral_exp_external_forces_controller
+	GITHUB_PRIVATE mathieu-celerier/ral_exp_external_forces
+	GIT_TAG origin/resubmission-1
+	DEPENDS mc_rtc
 )
 
 function(AddKinovaMujocoModel)
@@ -49,7 +61,7 @@ function(AddKinovaMujocoModel)
   endif()
   AddProject(kinova_mj_description
     GITHUB mathieu-celerier/kinova_mj_description
-    GIT_TAG origin/main
+    GIT_TAG origin/force_sensor
     DEPENDS mc_mujoco mc_kinova
   )
 endfunction()
