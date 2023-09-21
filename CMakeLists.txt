@@ -44,13 +44,13 @@ AddProject(mc_kinova
 )
 
 AddProject(mc_residual_estimation
-	GITHUB_PRIVATE mathieu-celerier/mc_residual_estimation
+	GITHUB mathieu-celerier/mc_residual_estimation
 	GIT_TAG origin/main
 	DEPENDS mc_rtc
 )
 
 AddProject(ral_exp_external_forces_controller
-	GITHUB_PRIVATE mathieu-celerier/ral_exp_external_forces
+	GITHUB mathieu-celerier/ral_exp_external_forces
 	GIT_TAG origin/resubmission-1
 	DEPENDS mc_rtc
 )
