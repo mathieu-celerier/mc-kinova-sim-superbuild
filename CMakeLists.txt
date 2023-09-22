@@ -37,12 +37,6 @@ AddCatkinProject(ros_kortex
   WORKSPACE data_ws
 )
 
-AddProject(mc_kinova
-  GITHUB mathieu-celerier/mc_kinova
-  GIT_TAG origin/topic/ft_sensor
-  DEPENDS mc_rtc ros_kortex
-)
-
 AddProject(mc_residual_estimation
 	GITHUB mathieu-celerier/mc_residual_estimation
 	GIT_TAG origin/main
