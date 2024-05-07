@@ -48,7 +48,7 @@ AddCatkinProject(ros_kortex
 
 AddProject(mc_kinova
   GITHUB mathieu-celerier/mc_kinova
-  GIT_TAG origin/topic/ft_sensor
+  GIT_TAG origin/main
   DEPENDS mc_rtc ros_kortex
 )
 
@@ -58,7 +58,7 @@ function(AddKinovaMujocoModel)
   endif()
   AddProject(kinova_mj_description
     GITHUB mathieu-celerier/kinova_mj_description
-    GIT_TAG origin/force_sensor
+    GIT_TAG origin/main
     DEPENDS mc_mujoco mc_kinova
   )
 endfunction()
