@@ -44,16 +44,10 @@ AddCatkinProject(ros_kortex
   WORKSPACE data_ws
 )
 
-AddProject(mc_residual_estimation
-	GITHUB mathieu-celerier/mc_residual_estimation
-	GIT_TAG origin/main
-	DEPENDS mc_rtc
-)
-
-AddProject(ral_exp_external_forces_controller
-	GITHUB mathieu-celerier/ral_exp_external_forces
-	GIT_TAG origin/resubmission-1
-	DEPENDS mc_rtc
+AddProject(mc_kinova
+  GITHUB mathieu-celerier/mc_kinova
+  GIT_TAG origin/topic/ft_sensor
+  DEPENDS mc_rtc ros_kortex
 )
 
 function(AddKinovaMujocoModel)
