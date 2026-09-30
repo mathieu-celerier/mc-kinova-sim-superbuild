@@ -26,7 +26,7 @@ git clone https://github.com/mathieu-celerier/mc-kinova-sim-superbuild mc-rtc-su
 cmake -S mc-rtc-superbuild -B mc-rtc-superbuild/build -DSOURCE_DESTINATION=${HOME}/devel/src -DBUILD_DESTINATION=${HOME}/devel/build
 cd mc-rtc-superbuild/build
 cmake --build . --config RelWithDebInfo --target clone
-cd ${HOME}/devel/src
+cd ${HOME}/devel/src/mc_rtc
 git remote add EXP https://github.com/mathieu-celerier/mc_rtc.git
 git checkout EXP/topic/external-forces
 cd ${HOME}/devel/build
